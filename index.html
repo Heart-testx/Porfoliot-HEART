@@ -58,10 +58,14 @@
             color: #ffffff;
             padding: 8px 16px;
             border-radius: 20px;
-            text-decoration: none;
+            border: none;
             font-weight: 500;
             font-size: 0.9rem;
+            cursor: pointer;
             transition: opacity 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
         .subscribe-btn:hover { 
             opacity: 0.9; /* เวลาชี้ให้หม่นลงนิดนึง */
@@ -117,6 +121,50 @@
             gap: 10px;
         }
         .logo span { color: var(--youtube-red); }
+
+        /* -----------------------------------------
+           [UPDATE] ระบบเมนูตัวเลือก Dropdown สำหรับ Hire Me
+           ----------------------------------------- */
+        .hire-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 8px;
+            background-color: #212121;
+            min-width: 200px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+            z-index: 1010;
+            overflow: hidden;
+            animation: dropdownFade 0.2s ease-out;
+        }
+        .dropdown-menu.show {
+            display: block;
+        }
+        @keyframes dropdownFade {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dropdown-item {
+            color: var(--text-main);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .dropdown-item:hover {
+            background-color: var(--hover-bg);
+        }
 
         /* Channel Banner & Info */
         .channel-banner {
@@ -275,9 +323,7 @@
             color: #aaaaaa;
         }
 
-        /* -----------------------------------------
-           [ADD - ข้อ 2] เอฟเฟกต์อนิเมชัน Fade-In ตอนสลับแท็บ
-           ----------------------------------------- */
+        /* เอฟเฟกต์อนิเมชัน Fade-In ตอนสลับแท็บ */
         @keyframes tabFadeIn {
             from {
                 opacity: 0;
@@ -289,9 +335,7 @@
             }
         }
 
-        /* -----------------------------------------
-           [ADD - ข้อ 3] สไตล์ปุ่มลอย Back to Top
-           ----------------------------------------- */
+        /* สไตล์ปุ่มลอย Back to Top */
         #backToTopBtn {
             position: fixed;
             bottom: 25px;
@@ -319,9 +363,7 @@
             background-color: #cc0000;
         }
 
-        /* -----------------------------------------
-           [ADD - ข้อ 4] สไตล์ของระบบกล่องป๊อปอัปขยายรูป (Lightbox Modal)
-           ----------------------------------------- */
+        /* สไตล์ของระบบกล่องป๊อปอัปขยายรูป (Lightbox Modal) */
         .lightbox-modal {
             display: none;
             position: fixed;
@@ -441,7 +483,18 @@
 
     <header>
         <a href="#" class="logo">▶️ <span>Port</span>folioHEART</a>
-        <a href="https://www.facebook.com/thir.phathr.kheiyw.chaxxn" target="_blank" class="subscribe-btn">Hire Me</a>
+        <!-- เปลี่ยนจากลิงก์ธรรมดา เป็นกล่อง Dropdown ตัวเลือก -->
+        <div class="hire-dropdown-container">
+            <button class="subscribe-btn" id="hireBtn">Hire Me ▾</button>
+            <div class="dropdown-menu" id="hireDropdown">
+                <a href="https://m.me/thir.phathr.kheiyw.chaxxn" target="_blank" class="dropdown-item">
+                    💬 Facebook Messenger
+                </a>
+                <a href="mailto:thiraphatttkk@gmail.com" class="dropdown-item">
+                    ✉️ ส่งอีเมล (Gmail)
+                </a>
+            </div>
+        </div>
     </header>
 
     <div class="channel-banner">
@@ -832,7 +885,6 @@
                 </div>
             </a>
             
-            <!-- [UPDATE - ข้อ 4] ลบ target="_blank" ออกเพื่อให้ระบบดักการทำงานผ่านคลิกเปิดเป็น Pop-up แทน -->
             <a href="images/TN4.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN4.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
@@ -950,10 +1002,10 @@
         </footer>
     </main>
 
-    <!-- [ADD - ข้อ 3] ปุ่มลอยสำหรับกดกลับขึ้นด้านบน -->
+    <!-- ปุ่มลอยสำหรับกดกลับขึ้นด้านบน -->
     <button id="backToTopBtn" title="กลับสู่ด้านบน">▲</button>
 
-    <!-- [ADD - ข้อ 4] โครงสร้างกล่องป๊อปอัปสำหรับขยายรูป Graphic -->
+    <!-- โครงสร้างกล่องป๊อปอัปสำหรับขยายรูป Graphic -->
     <div id="lightboxModal" class="lightbox-modal">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-content" id="lightboxImg">
@@ -973,11 +1025,10 @@
             var grid = document.getElementById('portfolio-grid');
             var expSection = document.querySelector('.experience-section');
 
-            // ฟังก์ชันซ่อน/แสดง พร้อมใส่เอฟเฟกต์ Fade-in (ข้อ 2)
+            // ฟังก์ชันซ่อน/แสดง พร้อมใส่เอฟเฟกต์ Fade-in
             function displayItem(element, isVisible) {
                 if (isVisible) {
                     element.style.display = "block";
-                    // เคลียร์อนิเมชันเก่าก่อนรีเซ็ตเพื่อกระตุ้นให้เล่นใหม่ทุกครั้งที่กดแท็บ
                     element.style.animation = "none";
                     element.offsetHeight; // บังคับให้เบราว์เซอร์รับรู้ Reflow
                     element.style.animation = "tabFadeIn 0.4s ease forwards";
@@ -1011,7 +1062,26 @@
         }
 
         // -----------------------------------------
-        // [ADD - ข้อ 3] สคริปต์ระบบปุ่ม Back to Top
+        // [UPDATE] สคริปต์ระบบปุ่มกดเปิด/ปิด Dropdown เมนู Hire Me
+        // -----------------------------------------
+        var hireBtn = document.getElementById("hireBtn");
+        var hireDropdown = document.getElementById("hireDropdown");
+
+        hireBtn.addEventListener("click", function(event) {
+            event.stopPropagation(); // หยุดการส่งต่อ Event ไม่ให้เข้าตัวดักปิดด้านล่าง
+            hireDropdown.classList.toggle("show");
+        });
+
+        // ถ้าคลิกที่ส่วนอื่นของหน้าเว็บ ให้ปิดเมนูตัวเลือกโดยอัตโนมัติ
+        document.addEventListener("click", function(event) {
+            if (!hireDropdown.contains(event.target) && event.target !== hireBtn) {
+                hireDropdown.classList.remove("show");
+            }
+        });
+
+
+        // -----------------------------------------
+        // สคริปต์ระบบปุ่ม Back to Top
         // -----------------------------------------
         var topBtn = document.getElementById("backToTopBtn");
         window.onscroll = function() {
@@ -1031,14 +1101,13 @@
         });
 
         // -----------------------------------------
-        // [ADD - ข้อ 4] สคริปต์ระบบ Lightbox ป๊อปอัปรูปภาพ
+        // สคริปต์ระบบ Lightbox ป๊อปอัปรูปภาพ
         // -----------------------------------------
         var modal = document.getElementById("lightboxModal");
         var modalImg = document.getElementById("lightboxImg");
         var captionText = document.getElementById("lightboxCaption");
         var closeBtn = document.getElementsByClassName("lightbox-close")[0];
         
-        // ค้นหาการ์ดที่เป็นงานกราฟิกทั้งหมดเพื่อเปิดหน้าต่าง Modal
         var graphicCards = document.querySelectorAll(".item.graphic");
         graphicCards.forEach(function(card) {
             card.addEventListener("click", function(event) {
@@ -1046,19 +1115,16 @@
                 modal.style.display = "block";
                 modalImg.src = this.getAttribute("href");
                 
-                // ดึงชื่อหัวข้อของงานนั้นๆ มาตั้งเป็นคำอธิบายใต้รูป
                 var title = this.querySelector(".video-title");
                 captionText.innerText = title ? title.innerText : "";
             });
         });
 
-        // ฟังก์ชันในการปิด Modal
         function closeModal() {
             modal.style.display = "none";
         }
         closeBtn.onclick = closeModal;
         
-        // ถ้าคลิกบริเวณที่ว่างรอบๆ รูป (Black Background) ให้ปิดกล่องเช่นกัน
         modal.onclick = function(event) {
             if (event.target === modal) {
                 closeModal();
@@ -1077,12 +1143,10 @@
 
         // 2. ดักการกดปุ่มคีย์ลัด (F12, Inspect, View Source)
         document.addEventListener('keydown', function(e) {
-            // ดัก F12
             if (e.key === 'F12' || e.keyCode === 123) {
                 e.preventDefault();
                 return false;
             }
-            // ดัก Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
             if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
                 e.preventDefault();
                 return false;
