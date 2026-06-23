@@ -14,19 +14,69 @@
             font-family: 'Prompt', sans-serif;
         }
         :root {
-            --bg-color: #0f0f0f;
-            --nav-bg: #0f0f0f;
-            --card-bg: #0f0f0f;
-            --text-main: #f1f1f1;
-            --text-muted: #aaaaaa;
-            --youtube-red: #ff0000;
-            --hover-bg: #272727;
+    --bg-color: #0f0f0f;       /* สีพื้นหลังเว็บ (YouTube Dark Background) */
+    --nav-bg: #212121;         /* สีแถบบาร์ด้านบน (YouTube Nav) */
+    --card-bg: transparent;    /* ปล่อยให้กล่องวิดีโอโปร่งแสง โชว์พื้นหลังเหมือนยูทูป */
+    --text-main: #ffffff;      /* สีตัวหนังสือหลัก (ขาวบริสุทธิ์) */
+    --text-muted: #aaaaaa;    /* สีตัวหนังสือรอง เช่น พวกชื่อบทบาท/เวลา (เทา) */
+    --youtube-red: #ff0000;    /* สีแดงยูทูป */
+    --hover-bg: #3f3f3f;       /* สีตอนเอาเมาส์ไปชี้ปุ่มเมนู */
+    --tab-unactive: #272727;   /* สีปุ่มเมนูตอนที่ยังไม่ได้กด */
+}
+
+/* ปรับแต่งปุ่มแท็บเมนู (Tabs) ให้มนและเหมือนหน้าแรกของ YouTube */
+.tab-btn {
+    background-color: var(--tab-unactive);
+    color: var(--text-main);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px; /* ปรับให้เหลี่ยมมนนิดๆ สไตล์ YouTube ยุคใหม่ */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.tab-btn:hover { 
+    background-color: var(--hover-bg); 
+}
+.tab-btn.active { 
+    background-color: var(--text-main); /* ปุ่มที่เลือกจะเป็นสีขาว */
+    color: #000000;                     /* ตัวหนังสือสีดำ */
+}
+
+/* ปุ่ม Hire Me (ขวาบน) ให้เป็นสีแดง YouTube */
+.subscribe-btn {
+    background-color: var(--youtube-red);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: opacity 0.2s ease;
+}
+.subscribe-btn:hover { 
+    opacity: 0.9; /* เวลาชี้ให้หม่นลงนิดนึง */
+    background-color: var(--youtube-red);
+}
+
+/* ปรับขอบเส้นใต้ของ Header ให้กลืนไปกับธีม */
+header {
+    border-bottom: 1px solid #2f2f2f;
+}
+.tabs {
+    border-bottom: 1px solid #2f2f2f;
+}
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             padding-top: 60px; /* Space for fixed navbar */
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Navbar */
@@ -62,7 +112,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: 0.2s;
+            transition: background-color 0.2s ease;
         }
         .subscribe-btn:hover { background-color: #d9d9d9; }
 
@@ -71,7 +121,6 @@
             width: 100%;
             height: 200px;
             background: linear-gradient(45deg, #1a1a1a, #333333); 
-            object-fit: cover;
             overflow: hidden;
         }
         .channel-banner img {
@@ -91,29 +140,34 @@
             border-radius: 50%;
             object-fit: cover;
             background-color: #333;
+            border: 2px solid transparent;
         }
         .channel-details h1 { font-size: 2rem; margin-bottom: 5px; }
-        .channel-details p { color: var(--text-muted); font-size: 0.9rem; }
+        .channel-details p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px; }
 
         /* Navigation Tabs (Filter) */
         .tabs {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             padding: 10px 5%;
             border-bottom: 1px solid #333;
             overflow-x: auto;
             white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
         }
+        .tabs::-webkit-scrollbar { display: none; } /* Hide scrollbar for clean look */
+        .tabs { -ms-overflow-style: none; scrollbar-width: none; }
+
         .tab-btn {
             background-color: var(--hover-bg);
             color: var(--text-main);
             border: none;
-            padding: 8px 15px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: 0.2s;
+            transition: background-color 0.2s, color 0.2s;
         }
         .tab-btn:hover { background-color: #3f3f3f; }
         .tab-btn.active { background-color: var(--text-main); color: var(--bg-color); }
@@ -135,7 +189,7 @@
             text-decoration: none;
             color: var(--text-main);
             display: block;
-            transition: transform 0.2s;
+            transition: transform 0.2s ease;
         }
         .video-card:hover { transform: scale(1.02); }
         .thumbnail {
@@ -191,37 +245,63 @@
         /* Experience Section */
         .experience-section {
             background-color: var(--hover-bg);
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             margin-top: 20px;
         }
-        .experience-section h2 { margin-bottom: 15px; border-bottom: 1px solid #444; padding-bottom: 10px;}
-        .exp-item { margin-bottom: 15px; }
-        .exp-item h3 { font-size: 1.1rem; color: var(--text-main); }
-        .exp-item p { font-size: 0.9rem; color: var(--text-muted); }
+        .experience-section h2 { margin-bottom: 20px; border-bottom: 1px solid #444; padding-bottom: 10px;}
+        .exp-item { margin-bottom: 20px; background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--youtube-red); }
+        .exp-item h3 { font-size: 1.1rem; color: var(--text-main); margin-bottom: 5px; }
+        .exp-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+        .exp-item p strong { color: var(--text-main); }
 
-        /* Mobile Adjustments */
+        /* Responsive Mobile Layout */
         @media (max-width: 600px) {
-            .channel-info { flex-direction: column; text-align: center; }
-            .profile-pic { width: 80px; height: 80px; }
-            .tabs { padding: 10px 20px; }
-            .video-grid { grid-template-columns: 1fr; }
+            header { padding: 0 15px; }
+            .logo { font-size: 1.2rem; }
+            .subscribe-btn { padding: 6px 12px; font-size: 0.8rem; }
+            
+            .channel-banner { height: 130px; }
+            
+            .channel-info {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 20px 20px 20px;
+                gap: 10px;
+            }
+            .profile-pic {
+                width: 90px;
+                height: 90px;
+                margin-top: -55px; 
+                border: 4px solid var(--bg-color); 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            }
+            .channel-details h1 { font-size: 1.4rem; }
+            .channel-details p { font-size: 0.85rem; }
+            
+            .tabs { padding: 10px 15px; gap: 8px; }
+            .tab-btn { padding: 6px 14px; font-size: 0.85rem; }
+
+            main { padding: 15px; }
+            .video-grid { grid-template-columns: 1fr; gap: 25px; } 
+            .video-title { font-size: 0.95rem; }
+            .experience-section { padding: 15px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">▶️ <span>Porfoliot</span>HEART</a>
+        <a href="#" class="logo">▶️ <span>Port</span>folioHEART</a>
         <a href="https://www.facebook.com/thir.phathr.kheiyw.chaxxn" target="_blank" class="subscribe-btn">Hire Me</a>
     </header>
 
     <div class="channel-banner">
-        <img src="images/PG2.jpg.jpg" alt="Channel Banner">
+        <img src="images/PG2.jpg.jpg" alt="Channel Banner" loading="lazy" decoding="async">
     </div>
 
     <div class="channel-info">
-        <img src="images/PG1.jpg.jpg" alt="Profile" class="profile-pic">
+        <img src="images/PG1.jpg.jpg" alt="Profile" class="profile-pic" loading="lazy" decoding="async">
         <div class="channel-details">
             <h1>THIRAPHAT KHIAOCHAOON</h1>
             <p>@HEART • Video Editor & Graphic Designer</p>
@@ -230,12 +310,11 @@
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="filterSelection('all')">หน้าแรก (ทั้งหมด)</button>
-        <button class="tab-btn" onclick="filterSelection('youtube')">YouTube</button>
-         <button class="tab-btn" onclick="filterSelection('tiktok')">TikTok</button>
-        <button class="tab-btn" onclick="filterSelection('graphic')">หน้าปกคลิป (Graphic)</button>
-        <button class="tab-btn" onclick="filterSelection('experience')">ประวัติ</button>
-        
+        <button class="tab-btn active" onclick="filterSelection(event, 'all')">หน้าแรก (ทั้งหมด)</button>
+        <button class="tab-btn" onclick="filterSelection(event, 'youtube')">YouTube</button>
+        <button class="tab-btn" onclick="filterSelection(event, 'tiktok')">TikTok</button>
+        <button class="tab-btn" onclick="filterSelection(event, 'graphic')">หน้าปกคลิป (Graphic)</button>
+        <button class="tab-btn" onclick="filterSelection(event, 'experience')">ประวัติ</button>
     </div>
 
     <main>
@@ -243,176 +322,297 @@
             
             <a href="https://youtu.be/mLczddDvJhI?si=EQi_tJk8rsRKdRpQ" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/mLczddDvJhI/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
+                    <img src="https://img.youtube.com/vi/mLczddDvJhI/mqdefault.jpg" alt="Local Story : บ้านศาลาดิน" loading="lazy" decoding="async">
+                    <span class="duration">04:31</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">Local Story : บ้านศาลาดิน </h3>
-                    <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
-                    </div>
-                </div>
-            </a>
-	<a href="https://youtu.be/ubjX47mlVuQ?si=RXk6Nh5MQZcUvB5p" target="_blank" class="video-card item youtube">
-                <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/ubjX47mlVuQ/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Local Story : ตลาดน้อย </h3>
-                    <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
-                    </div>
-                </div>
-            </a>
-	<a href="https://youtu.be/gJ5fXNr8rE8?si=wUpSOQbv-JX3uMTF" target="_blank" class="video-card item youtube">
-                <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/gJ5fXNr8rE8/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Local Story : ตลาดเก่าหัวตะเข้ </h3>
-                    <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
-                    </div>
-                </div>
-            </a>
-	<a href="https://youtu.be/9Awdd_bi6w4?si=WSPZgyrlX1ZQTYlX" target="_blank" class="video-card item youtube">
-                <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/9Awdd_bi6w4/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Local Story : บ้านชายทะเลรางจันทร์ </h3>
-                    <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
-                    </div>
-                </div>
-            </a>
-	<a href="https://youtu.be/9Awdd_bi6w4?si=WSPZgyrlX1ZQTYlX" target="_blank" class="video-card item youtube">
-                <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/Ocjx04B43hc/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Local Story : บ้านท่าฉลอม </h3>
-                    <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
-                    </div>
-                </div>
-            </a>
-	<a href="https://youtu.be/SMHye80wf1E?si=1sTaFOuYZ172bHEX" target="_blank" class="video-card item youtube">
-                <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/SMHye80wf1E/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Local Story : คลองบางมด(ตะนอย) </h3>
-                    <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
-                    </div>
-                </div>
-            </a>
-	<a href="https://youtu.be/9j1jhnvLJ6c?si=Du70YPH4siN5YJLq" target="_blank" class="video-card item youtube">
-                <div class="thumbnail">
-                    <img src="https://img.youtube.com/vi/9j1jhnvLJ6c/mqdefault.jpg" alt="YouTube Thumbnail">
-                    <span class="duration">10:05</span>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Local Story : ตลาดน้ำคลองลัดมะยม </h3>
+                    <h3 class="video-title">Local Story : บ้านศาลาดิน</h3>
                     <div class="video-meta">
                         <span class="badge yt">YouTube</span> บทบาท: Video Editor
                     </div>
                 </div>
             </a>
 
-            <a href="ใส่ลิงก์คลิปจริงตรงนี้" target="_blank" class="video-card item tiktok">
+            <a href="https://youtu.be/ubjX47mlVuQ?si=RXk6Nh5MQZcUvB5p" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
-                    <img src="images/thumb-tk1.jpg" alt="TikTok Thumbnail">
+                    <img src="https://img.youtube.com/vi/ubjX47mlVuQ/mqdefault.jpg" alt="Local Story : ตลาดน้อย" loading="lazy" decoding="async">
+                    <span class="duration">05:00</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Local Story : ตลาดน้อย</h3>
+                    <div class="video-meta">
+                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://youtu.be/gJ5fXNr8rE8?si=wUpSOQbv-JX3uMTF" target="_blank" class="video-card item youtube">
+                <div class="thumbnail">
+                    <img src="https://img.youtube.com/vi/gJ5fXNr8rE8/mqdefault.jpg" alt="Local Story : ตลาดเก่าหัวตะเข้" loading="lazy" decoding="async">
+                    <span class="duration">05:13</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Local Story : ตลาดเก่าหัวตะเข้</h3>
+                    <div class="video-meta">
+                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://youtu.be/9Awdd_bi6w4?si=WSPZgyrlX1ZQTYlX" target="_blank" class="video-card item youtube">
+                <div class="thumbnail">
+                    <img src="https://img.youtube.com/vi/9Awdd_bi6w4/mqdefault.jpg" alt="Local Story : บ้านชายทะเลรางจันทร์" loading="lazy" decoding="async">
+                    <span class="duration">04:41</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Local Story : บ้านชายทะเลรางจันทร์</h3>
+                    <div class="video-meta">
+                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://youtu.be/Ocjx04B43hc" target="_blank" class="video-card item youtube">
+                <div class="thumbnail">
+                    <img src="https://img.youtube.com/vi/Ocjx04B43hc/mqdefault.jpg" alt="Local Story : บ้านท่าฉลอม" loading="lazy" decoding="async">
+                    <span class="duration">04:55</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Local Story : บ้านท่าฉลอม</h3>
+                    <div class="video-meta">
+                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://youtu.be/SMHye80wf1E?si=1sTaFOuYZ172bHEX" target="_blank" class="video-card item youtube">
+                <div class="thumbnail">
+                    <img src="https://img.youtube.com/vi/SMHye80wf1E/mqdefault.jpg" alt="Local Story : คลองบางมด(ตะนอย)" loading="lazy" decoding="async">
+                    <span class="duration">05:22</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Local Story : คลองบางมด(ตะนอย)</h3>
+                    <div class="video-meta">
+                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://youtu.be/9j1jhnvLJ6c?si=Du70YPH4siN5YJLq" target="_blank" class="video-card item youtube">
+                <div class="thumbnail">
+                    <img src="https://img.youtube.com/vi/9j1jhnvLJ6c/mqdefault.jpg" alt="Local Story : ตลาดน้ำคลองลัดมะยม" loading="lazy" decoding="async">
+                    <span class="duration">05:07</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Local Story : ตลาดน้ำคลองลัดมะยม</h3>
+                    <div class="video-meta">
+                        <span class="badge yt">YouTube</span> บทบาท: Video Editor
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@dcarchannel/video/7414379531802397959" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">DCAR</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+
+	       <a href="https://www.tiktok.com/@dcarchannel/video/7414789390146309394" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT2.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
                     <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
                     <div class="video-meta">
-                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อแนวตั้ง
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
                 </div>
             </a>
 
-            <a href="ใส่ลิงก์รูปใหญ่หรือลิงก์โพสต์ตรงนี้" target="_blank" class="video-card item graphic">
-                <div class="thumbnail">
-                    <img src="images/thumb-graphic1.jpg" alt="Graphic Artwork">
+                      <a href="https://www.tiktok.com/@dcarchannel/video/7412903841865288965" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT3.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ออกแบบปกคลิป: รีวิวแกดเจ็ต 2026</h3>
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+
+
+ 		<a href="https://www.tiktok.com/@dcarchannel/video/7414451565567986952" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT4.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+
+	<a href="https://www.tiktok.com/@dcarchannel/video/7410754047021534471?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT5.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+
+
+	<a href="https://www.tiktok.com/@dcarchannel/video/7391853237701233938?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT6.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+            	       <a href="images/TN4.jpg" target="_blank" class="video-card item graphic">
+                <div class="thumbnail">
+                    <img src="images/TN4.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title"> กราฟิกแร่เงินเก่าแลกใหม่ </h3>
                     <div class="video-meta">
                         <span class="badge gp">Graphic</span> บทบาท: Thumbnail Designer
                     </div>
                 </div>
             </a>
-            
-             </div>
+
+	       <a href="images/TN5.jpg" target="_blank" class="video-card item graphic">
+                <div class="thumbnail">
+                    <img src="images/TN5.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title"> กราฟิกแร่เงิน</h3>
+                    <div class="video-meta">
+                        <span class="badge gp">Graphic</span> บทบาท: Thumbnail Designer
+                    </div>
+                </div>
+            </a>
+	   
+	<a href="images/TN6.jpg" target="_blank" class="video-card item graphic">
+                <div class="thumbnail">
+                    <img src="images/TN6.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title"> กราฟิกราคาทองรายวัน</h3>
+                    <div class="video-meta">
+                        <span class="badge gp">Graphic</span> บทบาท: Thumbnail Designer
+                    </div>
+                </div>
+            </a>
+
+	<a href="images/TN7.jpg" target="_blank" class="video-card item graphic">
+                <div class="thumbnail">
+                    <img src="images/TN7.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title"> กราฟิกราคาทองรายวัน</h3>
+                    <div class="video-meta">
+                        <span class="badge gp">Graphic</span> บทบาท: Thumbnail Designer
+                    </div>
+                </div>
+            </a>
+
+
+
+
+        </div>
 
         <div class="experience-section item experience" style="display: none;">
             <h2>ประวัติการทำงานและประวัติส่วนตัว</h2>
             
             <div class="exp-item">
                 <h3>Video Editor - ร้านรับซื้อเศษทองเงินนาก (ร้านโชคดี)</h3>
-                <p>รับผิดชอบถ่ายทำ ตัดต่อ ลงTiktok ทำกราฟิก </p>
+                <p>รับผิดชอบถ่ายทำ ตัดต่อ ลงTiktok ทำกราฟิก</p>
             </div>
             
             <div class="exp-item">
-                <h3>นักศึกษาฝึกงาน (Graphic & Video) DCAR Channel</h3>
-                <p>ช่วยตัดต่อคลิปรายการ จัดแสงถ่ายทำ สำหรับโพสต์ลง Facebook Fanpage,Youtube,tiktok</p>
-		
-	    <div class="exp-item">
-                <h3>พนักงานบริการ QQ DESSERT (PART-TIME)</h3>
-                <p>รับเออเดอร์/แคชเชียร์  จัดเตรียมวัตถุดิบ  ต้อนรับลูกค้า เปิด-ปิดร้าน</p>
-	
-		<div class="exp-item">
-                <h3>ข้อมูลการติดต่อ</h3>
-                <p>เบอร์โทร 0638-920-199</p>
-		<p>Gmail : thiraphatttkk@gmail.com</p>
+                <h3>นักศึกษาฝึกงาน (Graphic & Video) - DCAR Channel</h3>
+                <p>ช่วยตัดต่อคลิปรายการ จัดแสงถ่ายทำ สำหรับโพสต์ลง Facebook Fanpage, Youtube, tiktok</p>
+            </div>
+        
+            <div class="exp-item">
+                <h3>พนักงานบริการ - QQ DESSERT </h3>
+                <p>รับออเดอร์/แคชเชียร์ จัดเตรียมวัตถุดิบ ต้อนรับลูกค้า เปิด-ปิดร้าน</p>
+            </div>
 
+	        <div class="exp-item">
+                <h3>พนักงานครัวร้อน - COCOICHIBANYA </h3>
+                <p> จัดเตรียมวัตถุดิบ ประกอบอาหารตามออเดอรที่ได้รับ </p>
+            </div>
+
+            <div class="exp-item">
+                <h3>ประวัติส่วนตัว</h3>
+                <p><strong>ชื่อ-นามสกุล:</strong> นาย ธีรภัทร์ เขียวฉะอ้อน (ฮาร์ท)</p>
+                <p><strong>วัน/เดือน/ปีเกิด:</strong> 20 พฤษภาคม พ.ศ.2546</p>
+                <p><strong>📞 เบอร์โทร:</strong> 0638-920-199</p>
+		<p><strong>การศึกษา:</strong> มหาวิทยลัยเทคโนโลยีราชมงคลพระนคร เทเวศน์ ปริญญาตรี คณะสื่อสรมวลชน สาขา:ครีเอทีฟมีเดีย</p>
+                <p><strong>✉️ Gmail:</strong> thiraphatttkk@gmail.com</p>
             </div>
         </div>
     </main>
 
     <script>
-        // JavaScript สำหรับทำระบบ Filter
-        function filterSelection(c) {
-            var x, i;
-            x = document.getElementsByClassName("item");
-            if (c == "all") c = "";
-            
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+        function filterSelection(e, c) {
+            // ป้องกัน Bug เรื่อง Event element ทำงานผิดพลาดในแต่ละบราวเซอร์
+            var currentActive = document.querySelector(".tab-btn.active");
+            if (currentActive) {
+                currentActive.classList.remove("active");
             }
-            
-            for (i = 0; i < x.length; i++) {
-                if (x[i].className.indexOf(c) > -1) {
-                    if(c === 'experience'){
-                        x[i].style.display = "block";
-                        document.getElementById('portfolio-grid').style.display = "none";
+            e.currentTarget.classList.add("active");
+
+            var items = document.getElementsByClassName("item");
+            var grid = document.getElementById('portfolio-grid');
+            var expSection = document.querySelector('.experience-section');
+
+            if (c === 'all') {
+                grid.style.display = "grid";
+                expSection.style.display = "none";
+                for (var i = 0; i < items.length; i++) {
+                    if (!items[i].classList.contains('experience')) {
+                        items[i].style.display = "block";
+                    }
+                }
+            } else if (c === 'experience') {
+                grid.style.display = "none";
+                expSection.style.display = "block";
+            } else {
+                grid.style.display = "grid";
+                expSection.style.display = "none";
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].classList.contains(c)) {
+                        items[i].style.display = "block";
                     } else {
-                        document.getElementById('portfolio-grid').style.display = "grid";
-                        if(x[i].className.indexOf('experience') === -1) {
-                            x[i].style.display = "block";
-                        }
+                        items[i].style.display = "none";
                     }
                 }
             }
-            
-            var btns = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < btns.length; i++) {
-                btns[i].classList.remove("active");
-            }
-            event.currentTarget.classList.add("active");
         }
-
-        // เริ่มต้นซ่อนหน้าประสบการณ์ก่อน
-        filterSelection('all');
-        document.querySelector('.experience').style.display = "none";
     </script>
 </body>
 </html>
