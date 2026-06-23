@@ -1327,6 +1327,12 @@
 
         var hireBtn = document.getElementById("hireBtn");
         var hireDropdown = document.getElementById("hireDropdown");
+	// โค้ดสะกิดหน้าจอ 1px ให้ iOS คำนวณความสูงใหม่ (ทำงานนุ่มนวล ไม่ทำให้เว็บรวน) ✅
+	setTimeout(function() {
+   	 var currentScroll = window.scrollY;
+   	 window.scrollTo(0, currentScroll + 1);
+   	 window.scrollTo(0, currentScroll);
+	}, 50);
 
         hireBtn.addEventListener("click", function(event) {
             event.stopPropagation(); 
