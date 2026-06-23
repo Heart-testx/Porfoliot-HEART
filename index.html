@@ -584,6 +584,35 @@
             }
             .skill-name { font-size: 0.85rem; }
         }
+	
+/* -----------------------------------------
+           [แก้ไข] จัดระเบียบตัวหนังสือและไทม์ไลน์ในมือถือ
+           ----------------------------------------- */
+        @media (max-width: 600px) {
+            .timeline-track { 
+                padding-left: 20px !important; 
+                margin-left: 0px !important; 
+            }
+            .timeline-keyframe { 
+                left: -26px !important; 
+                width: 10px; 
+                height: 10px; 
+            }
+            .timeline-content { 
+                padding: 15px 12px !important; 
+            }
+            .timeline-content p, .timeline-content h3, .timeline-content .sub-title { 
+                word-break: break-word !important; 
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+            }
+            .timeline-content h3 {
+                font-size: 1rem !important;
+            }
+            .timeline-content p {
+                font-size: 0.85rem !important;
+            }
+        }
     </style>
 </head>
 <body>
