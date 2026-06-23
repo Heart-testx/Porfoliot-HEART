@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Video Editor & Graphic Designer</title>
     
-    <!-- ส่วนเสริม: ไอคอนบนแท็บเบราว์เซอร์ (Favicon) -->
     <link rel="icon" href="images/TN11.jpg" type="image/jpeg">
 
-    <!-- ส่วนเสริม: รูปพรีวิวและรายละเอียดเวลาส่งลิงก์ให้คนอื่น (Social Share Preview) -->
     <meta property="og:title" content="Portfolio - Thiraphat Khiaochaoon (HEART)">
     <meta property="og:description" content="แฟ้มสะสมผลงาน Video Editor & Graphic Designer รับตัดต่อคลิปและทำกราฟิก">
     <meta property="og:image" content="images/PG2.jpg.jpg">
@@ -304,9 +302,27 @@
             .tabs { padding: 10px 15px; gap: 8px; }
             .tab-btn { padding: 6px 14px; font-size: 0.85rem; }
 
-            main { padding: 15px; }
-            .video-grid { grid-template-columns: 1fr; gap: 25px; } 
-            .video-title { font-size: 0.95rem; }
+            main { padding: 12px; }
+            
+            /* ปรับมือถือให้เป็น 2 คอลัมน์กระชับ ช่วยลดระยะการรูดหน้าจอลง 50% */
+            .video-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 12px; 
+            } 
+            .video-title { 
+                font-size: 0.85rem; 
+                -webkit-line-clamp: 2;
+            }
+            .video-meta {
+                font-size: 0.75rem;
+            }
+            .thumbnail {
+                border-radius: 8px;
+            }
+            .video-card .thumbnail[style*="aspect-ratio: 9/16"] {
+                max-height: 260px !important; /* ปรับความสูงคลิปแนวตั้งในมือถือไม่ให้ยาวเกินไป */
+            }
+            
             .experience-section { padding: 15px; }
             
             /* Responsive profile box */
@@ -357,7 +373,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : บ้านศาลาดิน</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -370,7 +386,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : ตลาดน้อย</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -383,7 +399,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : ตลาดเก่าหัวตะเข้</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -396,7 +412,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : บ้านชายทะเลรางจันทร์</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -409,7 +425,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : บ้านท่าฉลอม</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -422,7 +438,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : คลองบางมด(ตะนอย)</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -433,9 +449,9 @@
                     <span class="duration">05:22</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ตี๋ฮาร์ทอยากรีวิว EP.1 ขนมของเล่นจากญี่ปุ่น อร่อยมาก!??</h3>
+                    <h3 class="video-title">ตี๋ฮาร์ทอยากรีวิว EP.1 ขนมจากญี่ปุ่น</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -446,9 +462,9 @@
                     <span class="duration">05:22</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">โปรเจคหนังสั้นส่งอาจาร์ย </h3>
+                    <h3 class="video-title">โปรเจคหนังสั้นส่งอาจารย์</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -459,9 +475,9 @@
                     <span class="duration">05:22</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานคลิปโฆษณา ลูกชิ้่น ส่งอาจาร์ย</h3>
+                    <h3 class="video-title">คลิปโฆษณาลูกชิ้น ส่งอาจารย์</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -474,7 +490,7 @@
                 <div class="video-info">
                     <h3 class="video-title">Local Story : ตลาดน้ำคลองลัดมะยม</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor  ผลงานตอนเรียน
+                        <span class="badge yt">YouTube</span> บทบาท: Editor
                     </div>
                 </div>
             </a>
@@ -485,9 +501,9 @@
                     <span class="duration">05:00</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> Youtube ทำเล่นกับเพื่อนๆ </h3>
+                    <h3 class="video-title">Youtube ทำเล่นกับเพื่อนๆ</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  	
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>
@@ -498,9 +514,9 @@
                     <span class="duration">05:00</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> Youtube ทำเล่นกับเพื่อนๆ </h3>
+                    <h3 class="video-title">Youtube ทำเล่นกับเพื่อนๆ</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>
@@ -511,9 +527,9 @@
                     <span class="duration">05:00</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> Youtube ทำเล่นกับเพื่อนๆ </h3>
+                    <h3 class="video-title">Youtube ทำเล่นกับเพื่อนๆ</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>
@@ -524,9 +540,9 @@
                     <span class="duration">05:00</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> Youtube ทำเล่นกับเพื่อนๆ </h3>
+                    <h3 class="video-title">Youtube ทำเล่นกับเพื่อนๆ</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>
@@ -537,9 +553,9 @@
                     <span class="duration">05:00</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> Youtube ทำเล่นกับเพื่อนๆ </h3>
+                    <h3 class="video-title">Youtube ทำเล่นกับเพื่อนๆ</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>
@@ -550,9 +566,9 @@
                     <span class="duration">05:00</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> Youtube ทำเล่นกับเพื่อนๆ </h3>
+                    <h3 class="video-title">Youtube ทำเล่นกับเพื่อนๆ</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>
@@ -565,7 +581,7 @@
                 <div class="video-info">
                     <h3 class="video-title">ผลงานตอนเรียน</h3>
                     <div class="video-meta">
-                        <span class="badge yt">YouTube</span> บทบาท: Video Editor/content  
+                        <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
             </a>	
@@ -576,7 +592,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
@@ -589,7 +605,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
@@ -602,7 +618,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
@@ -615,7 +631,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
@@ -628,7 +644,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
@@ -641,7 +657,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ
                     </div>
@@ -654,7 +670,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ
                     </div>
@@ -667,7 +683,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
@@ -680,7 +696,7 @@
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงาน DCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ
                     </div>
@@ -718,9 +734,9 @@
                     <img src="images/TN4.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> กราฟิกแร่เงินเก่าแลกใหม่ </h3>
+                    <h3 class="video-title">กราฟิกแร่เงินเก่าแลกใหม่</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบกราฟิก
+                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบ
                     </div>
                 </div>
             </a>
@@ -730,9 +746,9 @@
                     <img src="images/TN5.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> กราฟิกแร่เงิน</h3>
+                    <h3 class="video-title">กราฟิกแร่เงิน</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบกราฟิก
+                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบ
                     </div>
                 </div>
             </a>
@@ -742,9 +758,9 @@
                     <img src="images/TN6.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> กราฟิกราคาทองรายวัน</h3>
+                    <h3 class="video-title">กราฟิกราคาทองรายวัน</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบกราฟิก
+                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบ
                     </div>
                 </div>
             </a>
@@ -754,9 +770,9 @@
                     <img src="images/TN7.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> กราฟิกราคาทองรายวัน</h3>
+                    <h3 class="video-title">กราฟิกราคาทองรายวัน</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบกราฟิก
+                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบ
                     </div>
                 </div>
             </a>
@@ -766,9 +782,9 @@
                     <img src="images/TN8.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> กราฟิกราคาทองรายวัน</h3>
+                    <h3 class="video-title">กราฟิกราคาทองรายวัน</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบกราฟิก
+                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบ
                     </div>
                 </div>
             </a>
@@ -778,9 +794,9 @@
                     <img src="images/TN9.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> กราฟิกโฆษณารับซื้อทอง</h3>
+                    <h3 class="video-title">กราฟิกโฆษณารับซื้อทอง</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบกราฟิก
+                        <span class="badge gp">Graphic</span> บทบาท: ออกแบบ
                     </div>
                 </div>
             </a>
@@ -792,7 +808,7 @@
             
             <div class="exp-item">
                 <h3>Video Editor - ร้านรับซื้อเศษทองเงินนาก (ร้านโชคดี)</h3>
-                <p>รับผิดชอบถ่ายทำ ตัดต่อ ลงTiktok ทำกราฟิก</p>
+                <p>รับผิดชอบถ่ายทำ ตัดต่อ ลง Tiktok ทำกราฟิก</p>
             </div>
             
             <div class="exp-item">
@@ -806,7 +822,7 @@
             </div>
 
             <div class="exp-item">
-                <h3>งานอดิเรก ถ่ายคลิปตัดต่อลงYOUTUBE </h3>
+                <h3>งานอดิเรก ถ่ายคลิปตัดต่อลง YOUTUBE </h3>
                 <p>ถ่ายเล่นกับเพื่อนๆ</p>
             </div>
 
@@ -824,7 +840,6 @@
 
         </div>
         
-        <!-- ส่วนเสริม: เพิ่มแถบ Footer ด้านล่างสุด -->
         <footer style="text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #333; color: #aaaaaa; font-size: 0.9rem;">
             <p>© 2026 Thiraphat Khiaochaoon (HEART). All Rights Reserved.</p>
             <p>Contact: thiraphatttkk@gmail.com | Tel: 0638-920-199</p>
@@ -869,7 +884,7 @@
         }
 
         // -----------------------------------------
-        // โค้ดป้องกันการคลิกขวา และ ป้องกันการกด F12 / Inspect
+        // โค้ดระบบป้องกันความปลอดภัยหน้าเว็บ
         // -----------------------------------------
         
         // 1. ป้องกันการคลิกขวา
@@ -877,7 +892,7 @@
             e.preventDefault();
         });
 
-        // 2. ดักการกดปุ่มคีย์ลัด
+        // 2. ดักการกดปุ่มคีย์ลัด (F12, Inspect, View Source)
         document.addEventListener('keydown', function(e) {
             // ดัก F12
             if (e.key === 'F12' || e.keyCode === 123) {
@@ -896,6 +911,13 @@
             if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
                 e.preventDefault();
                 return false;
+            }
+        });
+
+        // 3. ป้องกันการลากรูปภาพไปเซฟดื้อๆ (Drag and Drop)
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.nodeName === 'IMG') {
+                e.preventDefault();
             }
         });
     </script>
