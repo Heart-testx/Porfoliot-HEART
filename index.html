@@ -14,59 +14,59 @@
             font-family: 'Prompt', sans-serif;
         }
         :root {
-    --bg-color: #0f0f0f;       /* สีพื้นหลังเว็บ (YouTube Dark Background) */
-    --nav-bg: #212121;         /* สีแถบบาร์ด้านบน (YouTube Nav) */
-    --card-bg: transparent;    /* ปล่อยให้กล่องวิดีโอโปร่งแสง โชว์พื้นหลังเหมือนยูทูป */
-    --text-main: #ffffff;      /* สีตัวหนังสือหลัก (ขาวบริสุทธิ์) */
-    --text-muted: #aaaaaa;    /* สีตัวหนังสือรอง เช่น พวกชื่อบทบาท/เวลา (เทา) */
-    --youtube-red: #ff0000;    /* สีแดงยูทูป */
-    --hover-bg: #3f3f3f;       /* สีตอนเอาเมาส์ไปชี้ปุ่มเมนู */
-    --tab-unactive: #272727;   /* สีปุ่มเมนูตอนที่ยังไม่ได้กด */
-}
+            --bg-color: #0f0f0f;       /* สีพื้นหลังเว็บ (YouTube Dark Background) */
+            --nav-bg: #212121;         /* สีแถบบาร์ด้านบน (YouTube Nav) */
+            --card-bg: transparent;    /* ปล่อยให้กล่องวิดีโอโปร่งแสง โชว์พื้นหลังเหมือนยูทูป */
+            --text-main: #ffffff;      /* สีตัวหนังสือหลัก (ขาวบริสุทธิ์) */
+            --text-muted: #aaaaaa;     /* สีตัวหนังสือรอง เช่น พวกชื่อบทบาท/เวลา (เทา) */
+            --youtube-red: #ff0000;    /* สีแดงยูทูป */
+            --hover-bg: #3f3f3f;       /* สีตอนเอาเมาส์ไปชี้ปุ่มเมนู */
+            --tab-unactive: #272727;   /* สีปุ่มเมนูตอนที่ยังไม่ได้กด */
+        }
 
-/* ปรับแต่งปุ่มแท็บเมนู (Tabs) ให้มนและเหมือนหน้าแรกของ YouTube */
-.tab-btn {
-    background-color: var(--tab-unactive);
-    color: var(--text-main);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px; /* ปรับให้เหลี่ยมมนนิดๆ สไตล์ YouTube ยุคใหม่ */
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: background-color 0.2s;
-}
-.tab-btn:hover { 
-    background-color: var(--hover-bg); 
-}
-.tab-btn.active { 
-    background-color: var(--text-main); /* ปุ่มที่เลือกจะเป็นสีขาว */
-    color: #000000;                     /* ตัวหนังสือสีดำ */
-}
+        /* ปรับแต่งปุ่มแท็บเมนู (Tabs) ให้มนและเหมือนหน้าแรกของ YouTube */
+        .tab-btn {
+            background-color: var(--tab-unactive);
+            color: var(--text-main);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px; /* ปรับให้เหลี่ยมมนนิดๆ สไตล์ YouTube ยุคใหม่ */
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        .tab-btn:hover { 
+            background-color: var(--hover-bg); 
+        }
+        .tab-btn.active { 
+            background-color: var(--text-main); /* ปุ่มที่เลือกจะเป็นสีขาว */
+            color: #000000;                     /* ตัวหนังสือสีดำ */
+        }
 
-/* ปุ่ม Hire Me (ขวาบน) ให้เป็นสีแดง YouTube */
-.subscribe-btn {
-    background-color: var(--youtube-red);
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: opacity 0.2s ease;
-}
-.subscribe-btn:hover { 
-    opacity: 0.9; /* เวลาชี้ให้หม่นลงนิดนึง */
-    background-color: var(--youtube-red);
-}
+        /* ปุ่ม Hire Me (ขวาบน) ให้เป็นสีแดง YouTube */
+        .subscribe-btn {
+            background-color: var(--youtube-red);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+        }
+        .subscribe-btn:hover { 
+            opacity: 0.9; /* เวลาชี้ให้หม่นลงนิดนึง */
+            background-color: var(--youtube-red);
+        }
 
-/* ปรับขอบเส้นใต้ของ Header ให้กลืนไปกับธีม */
-header {
-    border-bottom: 1px solid #2f2f2f;
-}
-.tabs {
-    border-bottom: 1px solid #2f2f2f;
-}
+        /* ปรับขอบเส้นใต้ของ Header ให้กลืนไปกับธีม */
+        header {
+            border-bottom: 1px solid #2f2f2f;
+        }
+        .tabs {
+            border-bottom: 1px solid #2f2f2f;
+        }
 
         html {
             scroll-behavior: smooth;
@@ -77,6 +77,11 @@ header {
             color: var(--text-main);
             padding-top: 60px; /* Space for fixed navbar */
             -webkit-font-smoothing: antialiased;
+            /* ป้องกันการคลุมดำก๊อปปี้ข้อความ */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* Navbar */
@@ -104,17 +109,6 @@ header {
             gap: 10px;
         }
         .logo span { color: var(--youtube-red); }
-        .subscribe-btn {
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
-        }
-        .subscribe-btn:hover { background-color: #d9d9d9; }
 
         /* Channel Banner & Info */
         .channel-banner {
@@ -158,20 +152,6 @@ header {
         .tabs::-webkit-scrollbar { display: none; } /* Hide scrollbar for clean look */
         .tabs { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .tab-btn {
-            background-color: var(--hover-bg);
-            color: var(--text-main);
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        .tab-btn:hover { background-color: #3f3f3f; }
-        .tab-btn.active { background-color: var(--text-main); color: var(--bg-color); }
-
         /* Main Content Grid */
         main { padding: 20px 5%; }
         
@@ -180,7 +160,7 @@ header {
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
-			align-items: start;
+	    align-items: start;
         }
 
         .video-card {
@@ -256,6 +236,37 @@ header {
         .exp-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
         .exp-item p strong { color: var(--text-main); }
 
+        /* เลย์เอาต์พิเศษสำหรับกล่องประวัติส่วนตัว (Profile Box) */
+        .profile-box {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            background: #212121;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .profile-box-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3f3f3f;
+            flex-shrink: 0;
+        }
+        .profile-box-details {
+            flex-grow: 1;
+            color: #ffffff;
+            line-height: 1.8;
+        }
+        .profile-box-details p {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        .profile-box-details strong {
+            color: #aaaaaa;
+        }
+
         /* Responsive Mobile Layout */
         @media (max-width: 600px) {
             header { padding: 0 15px; }
@@ -287,6 +298,13 @@ header {
             .video-grid { grid-template-columns: 1fr; gap: 25px; } 
             .video-title { font-size: 0.95rem; }
             .experience-section { padding: 15px; }
+            
+            /* Responsive profile box */
+            .profile-box {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -399,7 +417,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/nmnB34ZNEn0?si=xkBQSL8EGg7CrTqs" target="_blank" class="video-card item youtube">
+            <a href="https://youtu.be/nmnB34ZNEn0?si=xkBQSL8EGg7CrTqs" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/nmnB34ZNEn0/mqdefault.jpg" alt="ตี๋ฮาร์ทอยากรีวิว EP.1 ขนมของเล่นจากญี่ปุ่น อร่อยมาก!??" loading="lazy" decoding="async">
                     <span class="duration">05:22</span>
@@ -412,7 +430,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/IWIvZCgz-4g?si=bkz4bKAcVKllgO8Y" target="_blank" class="video-card item youtube">
+            <a href="https://youtu.be/IWIvZCgz-4g?si=bkz4bKAcVKllgO8Y" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/IWIvZCgz-4g/mqdefault.jpg" alt="โปรเจคหนังสั้นส่งอาจาร์ย" loading="lazy" decoding="async">
                     <span class="duration">05:22</span>
@@ -425,7 +443,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/obZXAxNRKGE?si=QeArASde7i0Q2stj" class="video-card item youtube">
+            <a href="https://youtu.be/obZXAxNRKGE?si=QeArASde7i0Q2stj" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/obZXAxNRKGE/mqdefault.jpg" alt="ผลงานคลิปโฆษณา ลูกชิ้่น ส่งอาจาร์ย" loading="lazy" decoding="async">
                     <span class="duration">05:22</span>
@@ -451,7 +469,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/jB0Rl97-Opo?si=iucGtb-5jS24Yd-1" target="_blank" class="video-card item youtube">
+            <a href="https://youtu.be/jB0Rl97-Opo?si=iucGtb-5jS24Yd-1" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/jB0Rl97-Opo/mqdefault.jpg" alt="Youtube ทำเล่นกับเพื่อนๆ" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -464,7 +482,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/jap4m9vu5rU" target="_blank" class="video-card item youtube">
+            <a href="https://youtu.be/jap4m9vu5rU" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/jap4m9vu5rU/mqdefault.jpg" alt="Youtube ทำเล่นกับเพื่อนๆย" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -477,7 +495,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/m6bCy78oXO4" class="video-card item youtube">
+            <a href="https://youtu.be/m6bCy78oXO4" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/m6bCy78oXO4/mqdefault.jpg" alt="Youtube ทำเล่นกับเพื่อนๆ" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -490,7 +508,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/nLdMAzsfVSc" class="video-card item youtube">
+            <a href="https://youtu.be/nLdMAzsfVSc" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/nLdMAzsfVSc/mqdefault.jpg" alt="Youtube ทำเล่นกับเพื่อนๆ" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -503,7 +521,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/Ew3lyWjwcz4" class="video-card item youtube">
+            <a href="https://youtu.be/Ew3lyWjwcz4" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/Ew3lyWjwcz4/mqdefault.jpg" alt="Local Story : ตลาดน้อย" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -516,7 +534,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/9drCowdzVCg" class="video-card item youtube">
+            <a href="https://youtu.be/9drCowdzVCg" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/9drCowdzVCg/mqdefault.jpg" alt="Local Story : ตลาดน้อย" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -529,7 +547,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://youtu.be/hjbC3qEPm_U" class="video-card item youtube">
+            <a href="https://youtu.be/hjbC3qEPm_U" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/hjbC3qEPm_U/mqdefault.jpg" alt="Local Story : ตลาดน้อย" loading="lazy" decoding="async">
                     <span class="duration">05:00</span>
@@ -548,14 +566,14 @@ header {
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">z]ผลงานช่วงฝึกงานDCAR</h3>
+                    <h3 class="video-title">ผลงานช่วงฝึกงานDCAR</h3>
                     <div class="video-meta">
                         <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
                 </div>
             </a>
 
-	       <a href="https://www.tiktok.com/@dcarchannel/video/7414789390146309394" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7414789390146309394" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT2.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -568,9 +586,7 @@ header {
                 </div>
             </a>
 
-	
-
-                      <a href="https://www.tiktok.com/@dcarchannel/video/7412903841865288965" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7412903841865288965" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT3.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -583,8 +599,7 @@ header {
                 </div>
             </a>
 
-
- 		<a href="https://www.tiktok.com/@dcarchannel/video/7414451565567986952" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7414451565567986952" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT4.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -597,7 +612,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://www.tiktok.com/@dcarchannel/video/7410754047021534471?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7410754047021534471" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT5.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -610,7 +625,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://www.tiktok.com/@dcarchannel/video/7392524087807036680?is_from_webapp=1&sender_device=pc" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7392524087807036680" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT9.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -623,8 +638,7 @@ header {
                 </div>
             </a>
 
-
-	<a href="https://www.tiktok.com/@dcarchannel/video/7391853237701233938?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7391853237701233938" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT6.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -637,7 +651,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://www.tiktok.com/@dcarchannel/video/7410005369876909313?is_from_webapp=1&sender_device=pc" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7410005369876909313" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT7.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -650,7 +664,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://www.tiktok.com/@dcarchannel/video/7408541874484432146?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7408541874484432146" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT8.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -663,7 +677,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://www.tiktok.com/@chockdee8899/video/7581484664989256978?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@chockdee8899/video/7581484664989256978" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT11.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -676,7 +690,7 @@ header {
                 </div>
             </a>
 
-	<a href="https://www.tiktok.com/@chockdee8899/video/7582944451010612501?is_from_webapp=1&sender_device=pc" target="_blank" class="video-card item tiktok">
+            <a href="https://www.tiktok.com/@chockdee8899/video/7582944451010612501" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/TNTT10.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
@@ -688,10 +702,8 @@ header {
                     </div>
                 </div>
             </a>
-	
-            	       
-
-	<a href="images/TN4.jpg" target="_blank" class="video-card item graphic">
+            
+            <a href="images/TN4.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN4.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -703,8 +715,7 @@ header {
                 </div>
             </a>
 
-	
-	       <a href="images/TN5.jpg" target="_blank" class="video-card item graphic">
+            <a href="images/TN5.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN5.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -715,8 +726,8 @@ header {
                     </div>
                 </div>
             </a>
-	   
-	<a href="images/TN6.jpg" target="_blank" class="video-card item graphic">
+       
+            <a href="images/TN6.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN6.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -728,7 +739,7 @@ header {
                 </div>
             </a>
 
-	<a href="images/TN7.jpg" target="_blank" class="video-card item graphic">
+            <a href="images/TN7.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN7.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -740,7 +751,7 @@ header {
                 </div>
             </a>
 
-	<a href="images/TN8.jpg" target="_blank" class="video-card item graphic">
+            <a href="images/TN8.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN8.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -752,7 +763,7 @@ header {
                 </div>
             </a>
 
-<a href="images/TN9.jpg" target="_blank" class="video-card item graphic">
+            <a href="images/TN9.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN9.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -763,8 +774,6 @@ header {
                     </div>
                 </div>
             </a>
-
-
 
         </div>
 
@@ -786,19 +795,23 @@ header {
                 <p>รับออเดอร์/แคชเชียร์ จัดเตรียมวัตถุดิบ ต้อนรับลูกค้า เปิด-ปิดร้าน</p>
             </div>
 
-			<div class="exp-item">
+            <div class="exp-item">
                 <h3>งานอดิเรก ถ่ายคลิปตัดต่อลงYOUTUBE </h3>
                 <p>ถ่ายเล่นกับเพื่อนๆ</p>
             </div>
 
-            <div class="exp-item">
-                <h3>ประวัติส่วนตัว</h3>
-                <p><strong>ชื่อ-นามสกุล:</strong> นาย ธีรภัทร์ เขียวฉะอ้อน (ฮาร์ท)</p>
-                <p><strong>วัน/เดือน/ปีเกิด:</strong> 20 พฤษภาคม พ.ศ.2546</p>
-                <p><strong>📞 เบอร์โทร:</strong> 0638-920-199</p>
-				<p><strong>การศึกษา:</strong>  ปริญญาตรี มหาวิทยลัยเทคโนโลยีราชมงคลพระนคร เทเวศน์ คณะสื่อสรมวลชน สาขา:ครีเอทีฟมีเดียเทคโนโลยี</p>
-                <p><strong>✉️ Gmail:</strong> thiraphatttkk@gmail.com</p>
+            <div class="profile-box">
+                <img src="images/TN11.jpg" alt="Thiraphat Profile" class="profile-box-img" loading="lazy">
+                
+                <div class="profile-box-details">
+                    <p><strong>ชื่อ-นามสกุล:</strong> นาย ธีรภัทร์ เขียวฉะอ้อน (ฮาร์ท)</p>
+                    <p><strong>วัน/เดือน/ปีเกิด:</strong> 20 พฤษภาคม พ.ศ.2546</p>
+                    <p><strong>📞 เบอร์โทร:</strong> 0638-920-199</p>
+                    <p><strong>การศึกษา:</strong> ปริญญาตรี มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร เทเวศร์ คณะสื่อสารมวลชน สาขา:ครีเอทีฟมีเดียเทคโนโลยี</p>
+                    <p><strong>✉️ Gmail:</strong> thiraphatttkk@gmail.com</p>
+                </div>
             </div>
+
         </div>
     </main>
 
@@ -838,6 +851,37 @@ header {
                 }
             }
         }
+
+        // -----------------------------------------
+        // โค้ดป้องกันการคลิกขวา และ ป้องกันการกด F12 / Inspect
+        // -----------------------------------------
+        
+        // 1. ป้องกันการคลิกขวา
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2. ดักการกดปุ่มคีย์ลัด
+        document.addEventListener('keydown', function(e) {
+            // ดัก F12
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // ดัก Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>
