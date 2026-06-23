@@ -22,23 +22,22 @@
             font-family: 'Prompt', sans-serif;
         }
         :root {
-            --bg-color: #0f0f0f;       /* สีพื้นหลังเว็บ (YouTube Dark Background) */
-            --nav-bg: #212121;         /* สีแถบบาร์ด้านบน (YouTube Nav) */
-            --card-bg: transparent;    /* ปล่อยให้กล่องวิดีโอโปร่งแสง โชว์พื้นหลังเหมือนยูทูป */
-            --text-main: #ffffff;      /* สีตัวหนังสือหลัก (ขาวบริสุทธิ์) */
-            --text-muted: #aaaaaa;     /* สีตัวหนังสือรอง เช่น พวกชื่อบทบาท/เวลา (เทา) */
-            --youtube-red: #ff0000;    /* สีแดงยูทูป */
-            --hover-bg: #3f3f3f;       /* สีตอนเอาเมาส์ไปชี้ปุ่มเมนู */
-            --tab-unactive: #272727;   /* สีปุ่มเมนูตอนที่ยังไม่ได้กด */
+            --bg-color: #0f0f0f;       
+            --nav-bg: #212121;         
+            --card-bg: transparent;    
+            --text-main: #ffffff;      
+            --text-muted: #aaaaaa;     
+            --youtube-red: #ff0000;    
+            --hover-bg: #3f3f3f;       
+            --tab-unactive: #272727;   
         }
 
-        /* ปรับแต่งปุ่มแท็บเมนู (Tabs) ให้มนและเหมือนหน้าแรกของ YouTube */
         .tab-btn {
             background-color: var(--tab-unactive);
             color: var(--text-main);
             border: none;
             padding: 8px 16px;
-            border-radius: 8px; /* ปรับให้เหลี่ยมมนนิดๆ สไตล์ YouTube ยุคใหม่ */
+            border-radius: 8px; 
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 500;
@@ -48,11 +47,10 @@
             background-color: var(--hover-bg); 
         }
         .tab-btn.active { 
-            background-color: var(--text-main); /* ปุ่มที่เลือกจะเป็นสีขาว */
-            color: #000000;                     /* ตัวหนังสือสีดำ */
+            background-color: var(--text-main); 
+            color: #000000;                     
         }
 
-        /* ปุ่ม Hire Me (ขวาบน) ให้เป็นสีแดง YouTube */
         .subscribe-btn {
             background-color: var(--youtube-red);
             color: #ffffff;
@@ -68,11 +66,10 @@
             gap: 4px;
         }
         .subscribe-btn:hover { 
-            opacity: 0.9; /* เวลาชี้ให้หม่นลงนิดนึง */
+            opacity: 0.9; 
             background-color: var(--youtube-red);
         }
 
-        /* ปรับขอบเส้นใต้ของ Header ให้กลืนไปกับธีม */
         header {
             border-bottom: 1px solid #2f2f2f;
         }
@@ -87,9 +84,8 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            padding-top: 60px; /* Space for fixed navbar */
+            padding-top: 60px; 
             -webkit-font-smoothing: antialiased;
-            /* ป้องกันการคลุมดำก๊อปปี้ข้อความ */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -122,9 +118,6 @@
         }
         .logo span { color: var(--youtube-red); }
 
-        /* -----------------------------------------
-           [UPDATE] ระบบเมนูตัวเลือก Dropdown สำหรับ Hire Me
-           ----------------------------------------- */
         .hire-dropdown-container {
             position: relative;
             display: inline-block;
@@ -195,7 +188,7 @@
         .channel-details h1 { font-size: 2rem; margin-bottom: 5px; }
         .channel-details p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px; }
 
-        /* Navigation Tabs (Filter) */
+        /* Navigation Tabs */
         .tabs {
             display: flex;
             gap: 12px;
@@ -205,7 +198,7 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
-        .tabs::-webkit-scrollbar { display: none; } /* Hide scrollbar for clean look */
+        .tabs::-webkit-scrollbar { display: none; } 
         .tabs { -ms-overflow-style: none; scrollbar-width: none; }
 
         /* Main Content Grid */
@@ -292,7 +285,7 @@
         .exp-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
         .exp-item p strong { color: var(--text-main); }
 
-        /* เลย์เอาต์พิเศษสำหรับกล่องประวัติส่วนตัว (Profile Box) */
+        /* Profile Box */
         .profile-box {
             display: flex;
             gap: 30px;
@@ -323,19 +316,12 @@
             color: #aaaaaa;
         }
 
-        /* เอฟเฟกต์อนิเมชัน Fade-In ตอนสลับแท็บ */
         @keyframes tabFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* สไตล์ปุ่มลอย Back to Top */
+        /* Back to Top Button */
         #backToTopBtn {
             position: fixed;
             bottom: 25px;
@@ -363,7 +349,7 @@
             background-color: #cc0000;
         }
 
-        /* สไตล์ของระบบกล่องป๊อปอัปขยายรูป (Lightbox Modal) */
+        /* Lightbox Modal */
         .lightbox-modal {
             display: none;
             position: fixed;
@@ -415,71 +401,7 @@
             font-weight: 500;
         }
 
-        /* Responsive Mobile Layout */
-        @media (max-width: 600px) {
-            header { padding: 0 15px; }
-            .logo { font-size: 1.2rem; }
-            .subscribe-btn { padding: 6px 12px; font-size: 0.8rem; }
-            
-            .channel-banner { height: 130px; }
-            
-            .channel-info {
-                flex-direction: column;
-                text-align: center;
-                padding: 10px 20px 20px 20px;
-                gap: 10px;
-            }
-            .profile-pic {
-                width: 90px;
-                height: 90px;
-                margin-top: -55px; 
-                border: 4px solid var(--bg-color); 
-                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            }
-            .channel-details h1 { font-size: 1.4rem; }
-            .channel-details p { font-size: 0.85rem; }
-            
-            .tabs { padding: 10px 15px; gap: 8px; }
-            .tab-btn { padding: 6px 14px; font-size: 0.85rem; }
-
-            main { padding: 12px; }
-            
-            /* ปรับมือถือให้เป็น 2 คอลัมน์กระชับ ช่วยลดระยะการรูดหน้าจอลง 50% */
-            .video-grid { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 12px; 
-            } 
-            .video-title { 
-                font-size: 0.85rem; 
-                -webkit-line-clamp: 2;
-            }
-            .video-meta {
-                font-size: 0.75rem;
-            }
-            .thumbnail {
-                border-radius: 8px;
-            }
-            .video-card .thumbnail[style*="aspect-ratio: 9/16"] {
-                max-height: 260px !important; /* ปรับความสูงคลิปแนวตั้งในมือถือไม่ให้ยาวเกินไป */
-            }
-            
-            .experience-section { padding: 15px; }
-            
-            /* Responsive profile box */
-            .profile-box {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            /* ปรับแต่ง Lightbox บนมือถือ */
-            .lightbox-modal { padding-top: 100px; }
-            .lightbox-close { top: 20px; right: 20px; font-size: 35px; }
-            #backToTopBtn { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 1rem; }
-        }
-/* -----------------------------------------
-           [NEW] Skills & Software Grid
-           ----------------------------------------- */
+        /* Skills & Software Grid */
         .skills-container {
             margin-top: 50px;
         }
@@ -541,14 +463,12 @@
             backdrop-filter: blur(4px);
         }
 
-        /* Colors for each software */
         .skill-card.pr .skill-icon { background-color: #00005b; border-color: #9999ff; color: #9999ff; }
         .skill-card.ae .skill-icon { background-color: #00005b; border-color: #9999ff; color: #9999ff; }
         .skill-card.ps .skill-icon { background-color: #001e36; border-color: #31a8ff; color: #31a8ff; }
         .skill-card.ai .skill-icon { background-color: #330000; border-color: #ff9a00; color: #ff9a00; }
         .skill-card.cc .skill-icon { background-color: #111111; border-color: #ffffff; color: #ffffff; }
 
-        /* Hover Effects */
         .skill-card:hover {
             transform: translateY(-5px);
             background-color: #2a2a2a;
@@ -566,8 +486,61 @@
         .skill-card.ai:hover { border-color: #ff9a00; box-shadow: 0 8px 20px rgba(255, 154, 0, 0.15); }
         .skill-card.cc:hover { border-color: #ffffff; box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15); }
 
-        /* ปรับขนาด Skills Grid ในมือถือ */
+        /* Responsive Mobile Layout */
         @media (max-width: 600px) {
+            header { padding: 0 15px; }
+            .logo { font-size: 1.2rem; }
+            .subscribe-btn { padding: 6px 12px; font-size: 0.8rem; }
+            
+            .channel-banner { height: 130px; }
+            
+            .channel-info {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 20px 20px 20px;
+                gap: 10px;
+            }
+            .profile-pic {
+                width: 90px;
+                height: 90px;
+                margin-top: -55px; 
+                border: 4px solid var(--bg-color); 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            }
+            .channel-details h1 { font-size: 1.4rem; }
+            .channel-details p { font-size: 0.85rem; }
+            
+            .tabs { padding: 10px 15px; gap: 8px; }
+            .tab-btn { padding: 6px 14px; font-size: 0.85rem; }
+
+            main { padding: 12px; }
+            
+            .video-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 12px; 
+            } 
+            .video-title { 
+                font-size: 0.85rem; 
+                -webkit-line-clamp: 2;
+            }
+            .video-meta { font-size: 0.75rem; }
+            .thumbnail { border-radius: 8px; }
+            .video-card .thumbnail[style*="aspect-ratio: 9/16"] {
+                max-height: 260px !important; 
+            }
+            
+            .experience-section { padding: 15px; }
+            
+            .profile-box {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .lightbox-modal { padding-top: 100px; }
+            .lightbox-close { top: 20px; right: 20px; font-size: 35px; }
+            #backToTopBtn { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 1rem; }
+
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
@@ -583,12 +556,21 @@
                 margin-bottom: 10px;
             }
             .skill-name { font-size: 0.85rem; }
-        }
-	
-/* -----------------------------------------
-           [แก้ไข] จัดระเบียบตัวหนังสือและไทม์ไลน์ในมือถือ
-           ----------------------------------------- */
-        @media (max-width: 600px) {
+
+            /* [แก้ไขแบบถูกต้อง] รวมโค้ดล็อคระยะความกว้างและสูงหน้าจอมือถือ */
+            body, html {
+                overflow-x: hidden;
+            }
+            .experience-section {
+                padding-bottom: 20px !important;
+                margin-bottom: 20px !important;
+                height: auto !important;
+            }
+            .profile-box {
+                margin-bottom: 0 !important;
+                padding-bottom: 15px !important;
+            }
+            
             .timeline-track { 
                 padding-left: 20px !important; 
                 margin-left: 0px !important; 
@@ -606,12 +588,8 @@
                 overflow-wrap: break-word !important;
                 white-space: normal !important;
             }
-            .timeline-content h3 {
-                font-size: 1rem !important;
-            }
-            .timeline-content p {
-                font-size: 0.85rem !important;
-            }
+            .timeline-content h3 { font-size: 1rem !important; }
+            .timeline-content p { font-size: 0.85rem !important; }
         }
     </style>
 </head>
@@ -619,7 +597,6 @@
 
     <header>
         <a href="#" class="logo">▶️ <span>Port</span>folioHEART</a>
-        <!-- เปลี่ยนจากลิงก์ธรรมดา เป็นกล่อง Dropdown ตัวเลือก -->
         <div class="hire-dropdown-container">
             <button class="subscribe-btn" id="hireBtn">Hire Me ▾</button>
             <div class="dropdown-menu" id="hireDropdown">
@@ -670,7 +647,7 @@
                 </div>
             </a>
 
-			<a href="https://youtu.be/6s3O9bfgfb8?si=dhrggH-EG3mui_eE" target="_blank" class="video-card item youtube">
+            <a href="https://youtu.be/6s3O9bfgfb8?si=dhrggH-EG3mui_eE" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/6s3O9bfgfb8/mqdefault.jpg" alt="DCAR" loading="lazy" decoding="async">
                     <span class="duration">04:31</span>
@@ -683,7 +660,7 @@
                 </div>
             </a>
 
-			<a href="https://youtu.be/c8ylJD7XXcY?si=aoONUrJMjBXzDQ6O" target="_blank" class="video-card item youtube">
+            <a href="https://youtu.be/c8ylJD7XXcY?si=aoONUrJMjBXzDQ6O" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/c8ylJD7XXcY/mqdefault.jpg" alt="DCAR" loading="lazy" decoding="async">
                     <span class="duration">04:31</span>
@@ -722,7 +699,7 @@
                 </div>
             </a>
 
-	        <a href="https://www.youtube.com/watch?v=VWSdT6QjChg&t=27s" target="_blank" class="video-card item youtube">
+            <a href="https://www.youtube.com/watch?v=VWSdT6QjChg&t=27s" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/VWSdT6QjChg/mqdefault.jpg" alt="ผลงานช่วงฝึกงาน DCAR" loading="lazy" decoding="async">
                     <span class="duration">04:41</span>
@@ -734,7 +711,6 @@
                     </div>
                 </div>
             </a>
-
 
             <a href="https://youtu.be/9Awdd_bi6w4?si=WSPZgyrlX1ZQTYlX" target="_blank" class="video-card item youtube">
                 <div class="thumbnail">
@@ -916,7 +892,7 @@
                         <span class="badge yt">YouTube</span> บทบาท: Editor/Content
                     </div>
                 </div>
-            </a>	
+            </a>    
 
             <a href="https://www.tiktok.com/@dcarchannel/video/7414379531802397959" target="_blank" class="video-card item tiktok">
                 <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
@@ -1133,7 +1109,7 @@
                 </div>
             </a>
 
-			<a href="https://img.youtube.com/vi/Q6DMAl0D2RQ/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/Q6DMAl0D2RQ/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/Q6DMAl0D2RQ/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1145,7 +1121,7 @@
                 </div>
             </a>
 
-		<a href="https://img.youtube.com/vi/d_6D8TVqRHg/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/d_6D8TVqRHg/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/d_6D8TVqRHg/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1157,7 +1133,7 @@
                 </div>
             </a>
 
-			<a href="https://img.youtube.com/vi/i_lDw7Ah46c/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/i_lDw7Ah46c/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/i_lDw7Ah46c/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1169,7 +1145,7 @@
                 </div>
             </a>
 
-			<a href="https://img.youtube.com/vi/ZdCffpTwQiU/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/ZdCffpTwQiU/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/ZdCffpTwQiU/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1181,7 +1157,7 @@
                 </div>
             </a>
 
-		<a href="https://img.youtube.com/vi/1k20jc2soog/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/1k20jc2soog/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/1k20jc2soog/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1193,7 +1169,7 @@
                 </div>
             </a>
 
-		<a href="https://img.youtube.com/vi/c8ylJD7XXcY/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/c8ylJD7XXcY/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/c8ylJD7XXcY/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1205,8 +1181,7 @@
                 </div>
             </a>
 
-
-		<a href="https://img.youtube.com/vi/jB0Rl97-Opo/maxresdefault.jpg" class="video-card item graphic">
+            <a href="https://img.youtube.com/vi/jB0Rl97-Opo/maxresdefault.jpg" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="https://img.youtube.com/vi/jB0Rl97-Opo/maxresdefault.jpg" alt="ปกDCAR" loading="lazy" decoding="async">
                 </div>
@@ -1218,7 +1193,8 @@
                 </div>
             </a>
 
- </div>
+        </div>
+
         <div class="experience-section item experience" style="display: none;">
             <h2>ประวัติการทำงานและประวัติส่วนตัว</h2>
             
@@ -1252,12 +1228,11 @@
                     <p><strong>การศึกษา:</strong> ปริญญาตรี มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร เทเวศร์ คณะสื่อสารมวลชน สาขา:ครีเอทีฟมีเดียเทคโนโลยี</p>
                     <p><strong>✉️ Gmail:</strong> thiraphatttkk@gmail.com</p>
                 </div>
-
             </div>
-<div class="skills-container">
+
+            <div class="skills-container">
                 <h2>เครื่องมือและทักษะโปรแกรม</h2>
                 <div class="skills-grid">
-                    
                     <div class="skill-card pr">
                         <div class="skill-icon">Pr</div>
                         <div class="skill-name">Premiere Pro</div>
@@ -1281,18 +1256,11 @@
                         <div class="skill-name">CapCut</div>
                         <div class="skill-level" style="color: #ffffff;">เครื่องมือที่ใช้ได้</div>
                     </div>
-
                 </div>
             </div>
-        </div> <footer style="text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #333; color: #aaaaaa; font-size: 0.9rem;">
-           
-        </footer>
-        </div>
-        
- 
+        </div> 
 
-                </div>
-            </div>
+        <footer style="text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #333; color: #aaaaaa; font-size: 0.9rem;">
             <p>© 2026 Thiraphat Khiaochaoon (HEART). All Rights Reserved.</p>
             <p>Contact: thiraphatttkk@gmail.com | Tel: 0638-920-199</p>
         </footer>
@@ -1310,7 +1278,6 @@
 
     <script>
         function filterSelection(e, c) {
-            // ป้องกัน Bug เรื่อง Event element ทำงานผิดพลาดในแต่ละบราวเซอร์
             var currentActive = document.querySelector(".tab-btn.active");
             if (currentActive) {
                 currentActive.classList.remove("active");
@@ -1321,12 +1288,11 @@
             var grid = document.getElementById('portfolio-grid');
             var expSection = document.querySelector('.experience-section');
 
-            // ฟังก์ชันซ่อน/แสดง พร้อมใส่เอฟเฟกต์ Fade-in
             function displayItem(element, isVisible) {
                 if (isVisible) {
                     element.style.display = "block";
                     element.style.animation = "none";
-                    element.offsetHeight; // บังคับให้เบราว์เซอร์รับรู้ Reflow
+                    element.offsetHeight; 
                     element.style.animation = "tabFadeIn 0.4s ease forwards";
                 } else {
                     element.style.display = "none";
@@ -1357,28 +1323,20 @@
             }
         }
 
-        // -----------------------------------------
-        // [UPDATE] สคริปต์ระบบปุ่มกดเปิด/ปิด Dropdown เมนู Hire Me
-        // -----------------------------------------
         var hireBtn = document.getElementById("hireBtn");
         var hireDropdown = document.getElementById("hireDropdown");
 
         hireBtn.addEventListener("click", function(event) {
-            event.stopPropagation(); // หยุดการส่งต่อ Event ไม่ให้เข้าตัวดักปิดด้านล่าง
+            event.stopPropagation(); 
             hireDropdown.classList.toggle("show");
         });
 
-        // ถ้าคลิกที่ส่วนอื่นของหน้าเว็บ ให้ปิดเมนูตัวเลือกโดยอัตโนมัติ
         document.addEventListener("click", function(event) {
             if (!hireDropdown.contains(event.target) && event.target !== hireBtn) {
                 hireDropdown.classList.remove("show");
             }
         });
 
-
-        // -----------------------------------------
-        // สคริปต์ระบบปุ่ม Back to Top
-        // -----------------------------------------
         var topBtn = document.getElementById("backToTopBtn");
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -1396,9 +1354,6 @@
             });
         });
 
-        // -----------------------------------------
-        // สคริปต์ระบบ Lightbox ป๊อปอัปรูปภาพ
-        // -----------------------------------------
         var modal = document.getElementById("lightboxModal");
         var modalImg = document.getElementById("lightboxImg");
         var captionText = document.getElementById("lightboxCaption");
@@ -1407,7 +1362,7 @@
         var graphicCards = document.querySelectorAll(".item.graphic");
         graphicCards.forEach(function(card) {
             card.addEventListener("click", function(event) {
-                event.preventDefault(); // บล็อกไม่ให้เปิดแท็บใหม่
+                event.preventDefault(); 
                 modal.style.display = "block";
                 modalImg.src = this.getAttribute("href");
                 
@@ -1427,17 +1382,11 @@
             }
         };
 
-
-        // -----------------------------------------
-        // โค้ดระบบป้องกันความปลอดภัยหน้าเว็บ
-        // -----------------------------------------
-        
-        // 1. ป้องกันการคลิกขวา
+        // 🛡️ ระบบป้องกันความปลอดภัยหน้าเว็บ
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
 
-        // 2. ดักการกดปุ่มคีย์ลัด (F12, Inspect, View Source)
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' || e.keyCode === 123) {
                 e.preventDefault();
@@ -1457,7 +1406,6 @@
             }
         });
 
-        // 3. ป้องกันการลากรูปภาพไปเซฟดื้อๆ (Drag and Drop)
         document.addEventListener('dragstart', function(e) {
             if (e.target.nodeName === 'IMG') {
                 e.preventDefault();
