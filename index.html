@@ -14,14 +14,59 @@
             font-family: 'Prompt', sans-serif;
         }
         :root {
-            --bg-color: #0f0f0f;
-            --nav-bg: #0f0f0f;
-            --card-bg: #0f0f0f;
-            --text-main: #f1f1f1;
-            --text-muted: #aaaaaa;
-            --youtube-red: #ff0000;
-            --hover-bg: #272727;
-        }
+    --bg-color: #0f0f0f;       /* สีพื้นหลังเว็บ (YouTube Dark Background) */
+    --nav-bg: #212121;         /* สีแถบบาร์ด้านบน (YouTube Nav) */
+    --card-bg: transparent;    /* ปล่อยให้กล่องวิดีโอโปร่งแสง โชว์พื้นหลังเหมือนยูทูป */
+    --text-main: #ffffff;      /* สีตัวหนังสือหลัก (ขาวบริสุทธิ์) */
+    --text-muted: #aaaaaa;    /* สีตัวหนังสือรอง เช่น พวกชื่อบทบาท/เวลา (เทา) */
+    --youtube-red: #ff0000;    /* สีแดงยูทูป */
+    --hover-bg: #3f3f3f;       /* สีตอนเอาเมาส์ไปชี้ปุ่มเมนู */
+    --tab-unactive: #272727;   /* สีปุ่มเมนูตอนที่ยังไม่ได้กด */
+}
+
+/* ปรับแต่งปุ่มแท็บเมนู (Tabs) ให้มนและเหมือนหน้าแรกของ YouTube */
+.tab-btn {
+    background-color: var(--tab-unactive);
+    color: var(--text-main);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px; /* ปรับให้เหลี่ยมมนนิดๆ สไตล์ YouTube ยุคใหม่ */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.tab-btn:hover { 
+    background-color: var(--hover-bg); 
+}
+.tab-btn.active { 
+    background-color: var(--text-main); /* ปุ่มที่เลือกจะเป็นสีขาว */
+    color: #000000;                     /* ตัวหนังสือสีดำ */
+}
+
+/* ปุ่ม Hire Me (ขวาบน) ให้เป็นสีแดง YouTube */
+.subscribe-btn {
+    background-color: var(--youtube-red);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: opacity 0.2s ease;
+}
+.subscribe-btn:hover { 
+    opacity: 0.9; /* เวลาชี้ให้หม่นลงนิดนึง */
+    background-color: var(--youtube-red);
+}
+
+/* ปรับขอบเส้นใต้ของ Header ให้กลืนไปกับธีม */
+header {
+    border-bottom: 1px solid #2f2f2f;
+}
+.tabs {
+    border-bottom: 1px solid #2f2f2f;
+}
 
         html {
             scroll-behavior: smooth;
@@ -366,44 +411,86 @@
                 </div>
             </a>
 
-            <a href="ใส่ลิงก์คลิปจริงตรงนี้" target="_blank" class="video-card item tiktok">
-                <div class="thumbnail">
+            <a href="https://www.tiktok.com/@dcarchannel/video/7414379531802397959" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/TNTT1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+
+	       <a href="https://www.tiktok.com/@dcarchannel/video/7414789390146309394" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
                     <img src="images/thumb-tk1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
                     <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
                     <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
                     <div class="video-meta">
-                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อแนวตั้ง
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
                 </div>
             </a>
 
-            <a href="https://media.discordapp.net/attachments/978968303051632670/1516404230783635536/FB2A181E-9D37-47A3-A171-073B1EA117E3.png?ex=6a3284fe&is=6a31337e&hm=efa2073df1f4f2b5b31deba37729cb71254de97ffa34391d77b27b81226d2c52&=&format=webp&quality=lossless&width=856&height=856" target="_blank" class="video-card item graphic">
-                <div class="thumbnail">
-                    <img src="images/TN2.png" alt="Graphic Artwork 1" loading="lazy" decoding="async">
+                      <a href="https://www.tiktok.com/@dcarchannel/video/7412903841865288965" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/thumb-tk1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title">คิริตอส แนวหน้าผู้พิชิตดันเจี้ยน </h3>
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: Thumbnail Designer
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
                 </div>
             </a>
 
-            <a href="https://media.discordapp.net/attachments/978968303051632670/1516404231085752331/IMG_2494.png?ex=6a3284fe&is=6a31337e&hm=9a4ee7ea8384a77d5f87f49ed3fc28337f6dffaf7f2f332650fa428a4bce93bb&=&format=webp&quality=lossless&width=856&height=856" target="_blank" class="video-card item graphic">
-                <div class="thumbnail">
-                    <img src="images/TN3.png" alt="Graphic Artwork 2" loading="lazy" decoding="async">
+
+ 		<a href="https://www.tiktok.com/@dcarchannel/video/7414451565567986952" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/thumb-tk1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
                 </div>
                 <div class="video-info">
-                    <h3 class="video-title"> อาซึตอสเมียคิริตอส </h3>
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
                     <div class="video-meta">
-                        <span class="badge gp">Graphic</span> บทบาท: Thumbnail Designer
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
                     </div>
                 </div>
             </a>
-            
-	       <a href="https://media.discordapp.net/attachments/978968303051632670/1516404228380430417/IMG_3168.jpg?ex=6a3284fd&is=6a31337d&hm=2306da95e0528893a119c4cad5f26284790e342c8072619e177507a796f6d752&=&format=webp&width=856&height=856" target="_blank" class="video-card item graphic">
+
+	<a href="https://www.tiktok.com/@dcarchannel/video/7410754047021534471?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/thumb-tk1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+
+
+	<a href="https://www.tiktok.com/@dcarchannel/video/7391853237701233938?is_from_webapp=1&sender_device=pc&web_id=7612729386756015636" target="_blank" class="video-card item tiktok">
+                <div class="thumbnail" style="aspect-ratio: 9/16; max-height: 380px; width: auto; margin: 0 auto; background-color: #000;">
+                    <img src="images/thumb-tk1.jpg" alt="TikTok Thumbnail" loading="lazy" decoding="async">
+                    <span class="duration">0:59</span>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">ชาเลนจ์เต้นสุดฮิต จังหวะเป๊ะๆ</h3>
+                    <div class="video-meta">
+                        <span class="badge tk">TikTok</span> บทบาท: ตัดต่อ/ทำปก
+                    </div>
+                </div>
+            </a>
+            	       <a href="images/TN4.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN4.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -415,7 +502,7 @@
                 </div>
             </a>
 
-	       <a href="https://media.discordapp.net/attachments/978968303051632670/1516404228992667828/IMG_3167.jpg?ex=6a3284fd&is=6a31337d&hm=6964a3b7ebf2b8c2c160b3d41363dc51c7c4f803a6a705f6fad45b998ee648e4&=&format=webp&width=856&height=856" target="_blank" class="video-card item graphic">
+	       <a href="images/TN5.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN5.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -427,7 +514,7 @@
                 </div>
             </a>
 	   
-	<a href="https://media.discordapp.net/attachments/978968303051632670/1516404229487722566/IMG_3166.jpg?ex=6a3284fd&is=6a31337d&hm=d411754f750779e3cbffd1639f95bac49fe9ce16cc52e6c1311078ed84f68e54&=&format=webp&width=856&height=856" target="_blank" class="video-card item graphic">
+	<a href="images/TN6.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN6.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -439,7 +526,7 @@
                 </div>
             </a>
 
-	<a href="https://media.discordapp.net/attachments/978968303051632670/1516404230338904204/IMG_3165.jpg?ex=6a3284fd&is=6a31337d&hm=ebc28d405a0fec21624f980f045bc60d085466423ad8f935de8015f4c768b1f4&=&format=webp&width=856&height=856" target="_blank" class="video-card item graphic">
+	<a href="images/TN7.jpg" target="_blank" class="video-card item graphic">
                 <div class="thumbnail">
                     <img src="images/TN7.jpg" alt="Graphic Artwork 2" loading="lazy" decoding="async">
                 </div>
@@ -484,6 +571,7 @@
                 <p><strong>ชื่อ-นามสกุล:</strong> นาย ธีรภัทร์ เขียวฉะอ้อน (ฮาร์ท)</p>
                 <p><strong>วัน/เดือน/ปีเกิด:</strong> 20 พฤษภาคม พ.ศ.2546</p>
                 <p><strong>📞 เบอร์โทร:</strong> 0638-920-199</p>
+		<p><strong>การศึกษา:</strong> มหาวิทยลัยเทคโนโลยีราชมงคลพระนคร เทเวศน์ ปริญญาตรี คณะสื่อสรมวลชน สาขา:ครีเอทีฟมีเดีย</p>
                 <p><strong>✉️ Gmail:</strong> thiraphatttkk@gmail.com</p>
             </div>
         </div>
