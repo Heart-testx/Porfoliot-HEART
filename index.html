@@ -477,6 +477,113 @@
             .lightbox-close { top: 20px; right: 20px; font-size: 35px; }
             #backToTopBtn { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 1rem; }
         }
+/* -----------------------------------------
+           [NEW] Skills & Software Grid
+           ----------------------------------------- */
+        .skills-container {
+            margin-top: 50px;
+        }
+        .skills-container h2 {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 15px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 15px;
+        }
+        .skill-card {
+            background-color: #212121;
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            cursor: default;
+        }
+        .skill-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: opacity 0.3s ease;
+        }
+        .skill-level {
+            position: absolute;
+            bottom: -35px;
+            left: 0;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 8px 0;
+            background: rgba(0,0,0,0.8);
+            transition: bottom 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Colors for each software */
+        .skill-card.pr .skill-icon { background-color: #00005b; border-color: #9999ff; color: #9999ff; }
+        .skill-card.ae .skill-icon { background-color: #00005b; border-color: #9999ff; color: #9999ff; }
+        .skill-card.ps .skill-icon { background-color: #001e36; border-color: #31a8ff; color: #31a8ff; }
+        .skill-card.ai .skill-icon { background-color: #330000; border-color: #ff9a00; color: #ff9a00; }
+        .skill-card.cc .skill-icon { background-color: #111111; border-color: #ffffff; color: #ffffff; }
+
+        /* Hover Effects */
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background-color: #2a2a2a;
+        }
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) translateY(-5px);
+        }
+        .skill-card:hover .skill-level {
+            bottom: 0;
+        }
+        
+        .skill-card.pr:hover { border-color: #9999ff; box-shadow: 0 8px 20px rgba(153, 153, 255, 0.15); }
+        .skill-card.ae:hover { border-color: #9999ff; box-shadow: 0 8px 20px rgba(153, 153, 255, 0.15); }
+        .skill-card.ps:hover { border-color: #31a8ff; box-shadow: 0 8px 20px rgba(49, 168, 255, 0.15); }
+        .skill-card.ai:hover { border-color: #ff9a00; box-shadow: 0 8px 20px rgba(255, 154, 0, 0.15); }
+        .skill-card.cc:hover { border-color: #ffffff; box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15); }
+
+        /* ปรับขนาด Skills Grid ในมือถือ */
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .skill-card {
+                min-height: 120px;
+                padding: 15px 10px;
+            }
+            .skill-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+            .skill-name { font-size: 0.85rem; }
+        }
     </style>
 </head>
 <body>
@@ -992,11 +1099,47 @@
                     <p><strong>การศึกษา:</strong> ปริญญาตรี มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร เทเวศร์ คณะสื่อสารมวลชน สาขา:ครีเอทีฟมีเดียเทคโนโลยี</p>
                     <p><strong>✉️ Gmail:</strong> thiraphatttkk@gmail.com</p>
                 </div>
-            </div>
 
+            </div>
+<div class="skills-container">
+                <h2>เครื่องมือและทักษะโปรแกรม</h2>
+                <div class="skills-grid">
+                    
+                    <div class="skill-card pr">
+                        <div class="skill-icon">Pr</div>
+                        <div class="skill-name">Premiere Pro</div>
+                        <div class="skill-level" style="color: #9999ff;">Professional</div>
+                    </div>
+                    
+                    <div class="skill-card ae">
+                        <div class="skill-icon">Ae</div>
+                        <div class="skill-name">After Effects</div>
+                        <div class="skill-level" style="color: #9999ff;">Advanced</div>
+                    </div>
+                    
+                    <div class="skill-card ps">
+                        <div class="skill-icon">Ps</div>
+                        <div class="skill-name">Photoshop</div>
+                        <div class="skill-level" style="color: #31a8ff;">Professional</div>
+                    </div>
+                    
+                    <div class="skill-card cc">
+                        <div class="skill-icon">✂️</div>
+                        <div class="skill-name">CapCut</div>
+                        <div class="skill-level" style="color: #ffffff;">Professional</div>
+                    </div>
+
+                </div>
+            </div>
+        </div> <footer style="text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #333; color: #aaaaaa; font-size: 0.9rem;">
+           
+        </footer>
         </div>
         
-        <footer style="text-align: center; padding: 30px; margin-top: 40px; border-top: 1px solid #333; color: #aaaaaa; font-size: 0.9rem;">
+ 
+
+                </div>
+            </div>
             <p>© 2026 Thiraphat Khiaochaoon (HEART). All Rights Reserved.</p>
             <p>Contact: thiraphatttkk@gmail.com | Tel: 0638-920-199</p>
         </footer>
